@@ -1,0 +1,195 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Discrete Math Notes Lecture 02}
+\author{Tiffany Pham}
+\date{18 January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Logic Puzzles}
+Puzzle 1:
+\hfill \break
+Knights tell the truth always.
+\hfill \break
+Knives always lie.
+\hfill \break
+You meet 2 people, \textbf{A} and \textbf{B}
+\hfill \break
+\textbf{A says:} B is a knight.
+\hfill \break
+\textbf{B says:} we are of the opposite kind.
+\hfill \break
+\textbf{Question:} Can you determine the type of \textbf{A} and \textbf{B}?
+\hfill \break
+\hfill \break
+Puzzle 2:
+\hfill \break
+You are presented with 3 boxes, only one box has the treasure.
+\hfill \break
+\textbf{Box 1 inscription:} \textit{This box is empty.}
+\hfill \break
+\textbf{Box 2 inscription:} \textit{This box is empty.}
+\hfill \break
+\textbf{Box 3 inscription:} \textit{The treasure is in box 2.}
+\hfill \break
+Only one inscription is true.
+\hfill \break
+\textbf{Question:} can you determine which box has the treasure?
+
+\section{Logic}
+Mathematical logic studies:
+\begin{itemize}
+    \item logical foundation, structure and laws of mathematical reasoning and proofs
+    \item logic reasoning in general
+\end{itemize}
+Logic results and methods are applicable to many fields:
+\begin{itemize}
+    \item AI - automated theorm proving
+    \item linguistics: Natural language processing
+\end{itemize}
+Definition: \underline{A proposition} is a declarative sentence that can be assigned a truth value (true or false).
+
+Examples:
+\begin{itemize}
+    \item The sun is hot.
+    \item The Earth is made of cheese.
+    \item 2 + 2 = 3
+\end{itemize}
+\hfill \break
+The following are not propositions:
+\begin{itemize}
+    \item 2 + x = 5 (we cannot determine its truth value)
+    \item Please don't go away!
+\end{itemize}
+Any sentence which is a question or a command is not a proposition.
+\hfill \break
+We use letters to denote propositions
+\hfill \break
+Ex: p, q ,r ,s
+\hfill \break
+Truth values of propositions are denoted by T or F.
+\hfill \break
+Example:
+\hfill \break
+p = T
+\hfill \break
+q = F
+\section{Logical Operators}
+\textbf{Definition:} Let p be a proposition.
+\hfill \break
+The \underline{negation} of p, denoted \underline{$\neg p$}, is the statement:
+\hfill \break
+"It is not the case that p (is true)"
+\hfill \break
+P = "My computer runs Windows"
+$\neg p$ = "It is not the case that my computer runs Windows"
+\hfill \break
+Truth tables for $\neg p$:
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ p & $\neg p$  \\ 
+ \hline
+ T & F  \\ 
+ F & T  \\ 
+ \hline
+\end{tabular}
+\end{center}
+\textbf{Definition:} Let p and q be proposition variables. The \underline{conjunction} of p and q, denoted by p\textasciicircum q, is the statement p and q.
+\hfill \break
+Example:
+\hfill \break
+p = "it is cloudy"
+\hfill \break
+q = "it is raining"
+\hfill \break
+p\textasciicircum q = "It is cloudy and it is raining"
+\hfill \break
+The truth table for p\textasciicircum q:
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & p\textasciicircum q \\ 
+ \hline
+ T & T & T \\ 
+ T & F & F \\
+ F & T & F \\
+ F & F & F \\
+ \hline
+\end{tabular}
+\end{center}
+p\textasciicircum q is an example of a \underline{compound proposition}. Compound proposition can contain any number of individual propositions.
+\hfill \break
+Aside: in truth tables, if we have n propositional variables, we should have 2 rows?
+
+\hfill \break
+\textbf{Definition:} let p and q be propositions. The disjunction of p and q, denoted by p\textasciicircum q, is the statement p or q. The truth value of p\textasciicircum q is true if at least one of p or q is true. (note this includes the case when both are true)
+\hfill \break
+Truth table for p\textasciicircum q
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & p\textasciicircum q \\ 
+ \hline
+ T & T & T \\ 
+ T & F & F \\
+ F & T & F \\
+ F & F & F \\
+ \hline
+\end{tabular}
+\end{center}
+Example: 
+\hfill \break
+p = "it is cloudy"
+\hfill \break
+q = "it is raining"
+\hfill \break
+p\textasciicircum q is true when it is cloud or raining or both.
+\hfill \break
+In natural language, we often use the word "or" as "exclusive if" (XOR) denoted by p $\oplus$ q
+
+\hfill \break
+\textbf{Definition:} Let p and q be propositions. The conditional statement \underline{p $\rightarrow$ q} is proposition
+\begin{itemize}
+    \item If p then q
+    \item p implies q
+    \item q follows from p
+    \item p only if q
+    \item p is sufficient for q
+    \item q is necessary for p
+    \item q unless $\neg p$
+\end{itemize}
+Truth table p $\rightarrow$ q
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & $p \rightarrow q$ \\ 
+ \hline
+ T & T & T \\ 
+ T & F & F \\
+ F & T & F \\
+ F & F & F \\
+ \hline
+\end{tabular}
+\end{center}
+Example:
+\hfill \break
+p = "you get an A for the final"
+\hfill \break
+q = "I give you \$10,000"
+\hfill \break
+p $\rightarrow$ q: "if you get an A for the final, then I will give you \$10,000."
+\hfill \break
+The conditional statement p $\rightarrow$ q can be thought of as a promise, so the overall value p $\rightarrow$ q should be false only when the promise (contract) is broken. This only happens when p is true and q is false because you kept your end of the deal and I did not fulfill my promise. If p is false (you failed to fulfill your end of the promise), we never specified what happens in that case. So whatever I decide to do (give \$10,000 or not give \$10,000). I am not breaking my promise
+\hfill \break
+p $\rightarrow$ q
+\hfill \break
+Contra positive
+\hfill \break
+p $\rightarrow$ q = $\neg q \rightarrow \neg p$
+
+
+\end{document}

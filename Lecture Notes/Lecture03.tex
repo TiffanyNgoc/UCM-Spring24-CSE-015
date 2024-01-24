@@ -1,0 +1,275 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{mathabx}
+
+\title{Discrete Math Notes Lecture 03}
+\author{Tiffany Pham}
+\date{23 January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Schedule}
+\begin{itemize}
+    \item Conditional statements of propositions
+    \begin{itemize}
+        \item Conditional (revisited)
+        \item Contra positive
+        \item Converse
+        \item Inverse
+        \item Bioconditional
+    \end{itemize}
+    \item Translating English sentences into logic
+    \item System specifications
+\end{itemize}
+
+\section{Conditional Statements (revisited)}
+$p \rightarrow q$ is a proposition
+\begin{itemize}
+    \item if p then q
+    \item p implies q
+    \item q follows from p
+    \item p only if q
+    \item p is sufficient for q
+    \item q is necessary for p
+    \item q unless $\neg p$
+\end{itemize}
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & $p\rightarrow q$ \\ 
+ \hline
+ T & T & T \\ 
+ T & F & F \\
+ F & T & F \\
+ F & F & F \\
+ \hline
+\end{tabular}
+\end{center}
+Example:
+\hfill \break
+p = "It is raining"
+\hfill \break
+q = "I will get wet"
+\hfill \break
+$p \rightarrow q$ "If it is raining, I will get wet."
+\begin{itemize}
+    \item p only if q
+\end{itemize}
+"It can have rained \underline{only if} I get wet."
+\begin{itemize}
+    \item p \underline{is sufficient} for q
+\end{itemize}
+"It is sufficient for it to have rained for me to have gotten wet."
+\begin{itemize}
+    \item q is necessary for p
+\end{itemize}
+"It is necessary for me to have gotten wet for it to have rained."
+
+\hfill \break
+Example:
+\hfill \break
+p = "$x=2$"
+\hfill \break
+q = "$x^2=4$
+\hfill \break
+$p\rightarrow q$: if $x=2$ then $x^2=4$
+\hfill \break
+p \underline{only} if q
+\hfill \break
+$x=2$ only if $x^2=4$
+
+(but it is not required that $x=2$ because we can have $x=-2$)
+\hfill \break
+"p \underline{is sufficient} for q"
+\hfill \break
+$x=2$ \underline{is sufficient} for $x^2=4$
+\begin{itemize}
+    \item q is \underline{necessary} for p
+\end{itemize}
+$x^2=4$ is necessary for $x=2$
+\hfill \break
+Contra positive of $p\rightarrow q$ is $\neg q\rightarrow \neg p$
+
+$p\rightarrow q\equiv \neg q\rightarrow \neg p$
+\hfill \break
+Proving equivalence of two propositions:
+\hfill \break
+Write out the truth table for both propositions and see if every row matches:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ p & q & $p\rightarrow q$ & $\neg q$ & $\neg p$ & $\neg q \rightarrow \neg p$ \\ 
+ \hline
+ T & T & T & F & F & T \\ 
+ T & F & F & T & F & F \\
+ F & T & T & F & T & T \\
+ F & F & T & T & T & T \\
+ \hline
+\end{tabular}
+\end{center}
+\underline{Inverse} of $p\rightarrow q$ is $\neg p \rightarrow \neg q$
+\hfill \break
+\underline{Converse} of $p\rightarrow q$ is $q\rightarrow p$
+
+\hfill \break
+Examples:
+\hfill \break
+p = "Home team wins
+\hfill \break
+q = "It's raining"
+\hfill \break
+"The home team wins whenever it's raining
+\hfill \break
+$q\rightarrow p$
+\hfill \break
+Contra positive "$q\rightarrow p$"
+\hfill \break
+$q\rightarrow p\equiv \neg p \rightarrow \neg q$
+
+"If the home team lost then it was not raining."
+
+\hfill \break
+Converse $p\rightarrow q$
+
+"if the home team wins, then it is raining."
+
+\hfill \break
+Inverse $\neg q \rightarrow \neg p$
+
+"If it is not raining then the home team doesn't win."
+\hfill \break
+When a \underline{conditional} and its \underline{converse} are both true then $p\leftrightarrow q$ is true
+
+\hfill \break
+\textbf{Definition}: let p and q be propositions. The bi-conditional statement $p\leftrightarrow q$ is true when p and q have the same truth values and it is false otherwise.
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & $p\leftrightarrow q$ \\ 
+ \hline
+ T & T & T \\
+ T & F & F \\
+ F & T & F \\
+ F & F & T \\
+ \hline
+\end{tabular}
+\end{center}
+"$p\leftrightarrow q$ p is sufficient and necessary for q"
+\hfill \break
+Ex: "You can fly if and only if you bought a ticket."
+
+p = you are allowed to fly
+
+q = you bought a ticket
+
+$(q\rightarrow p)+(p\rightarrow q) = p\leftrightarrow q$
+\hfill \break
+Compare with
+$q\rightarrow p$
+\hfill \break
+If you bought a ticket then you can fly.
+\hfill \break
+This allows you to fly without buying a ticket.
+
+\hfill \break
+So $p\leftrightarrow q$ is the same as $(p\rightarrow q)$\textasciicircum$(q\rightarrow p)$
+\hfill \break
+Let's prove they are equivalent with a truth table:
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ p & q & $p\leftrightarrow q$ & $p\rightarrow q$ & $q\rightarrow p$ & $(p\rightarrow q)$\textasciicircum$(q\rightarrow p)$ \\ 
+ \hline
+ T & T & T & T & T & T \\ 
+ T & F & F & F & T & F \\
+ F & T & F & T & F & F \\
+ F & F & T & T & T & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+\vspace{50mm}
+\section{Translating English to Logic:}
+\hfill \break
+Example: Translate
+\hfill \break
+"You can access the internet from campus if you are a CSE major or you are not a freshman."
+
+\hfill \break
+Let
+
+p = "you can access the internet from campus"
+
+q = "you are a CSE major"
+
+r = "you are a freshman"
+
+(q $\widecheck$ $\neg r$)
+
+(q $\widecheck$ $\neg r$) $\rightarrow$ p
+
+\hfill \break
+You can not ride the roller-coaster if you are under 4ft, unless you're older than 16.
+
+Let
+
+q = "you can ride the roller-coaster"
+
+r = "you are under 4ft"
+
+s = "you are older than 16"
+
+\hfill \break
+(r $\widecheck$ $\neg s$) $\rightarrow \neg q$
+
+\section{System Specifications}
+We can use propositions to specify a set of specifications for a system. We can determine whether the system is:
+
+
+\underline{Consistent:} All propositions are true under some assignment of truth valves.
+
+\underline{Inconsistent:} It is not possible to satisfy all specifications.
+\hfill \break
+Ex:
+
+p: The message is stored in the buffer.
+
+q: The message is re-transmitted.
+\hfill \break
+Specification: p $\widecheck$ q, $p\neg q$, $p\rightarrow q$
+
+\hfill \break
+p $\widecheck$ q:
+
+The message is stored in the buffer or it is re-transmitted.
+\hfill \break
+$\neg p$: 
+
+The message is not stored in the buffer.
+\hfill \break
+$p\rightarrow q$:
+
+If the message is stored in the buffer, then it is re-transmitted.
+
+\hfill \break
+Is it possible for such a system to exist (be consistent)? Check if some assignment of truth values (to p and q) makes all the propositions true.
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+ p & q & $\neg q$ & p $\widecheck$ q & $p\rightarrow q$ \\ 
+ \hline
+ T & T & F & T & T \\ 
+ T & F & F & T & F \\
+ F & T & T & T & T \\
+ F & F & T & F & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+\end{document}

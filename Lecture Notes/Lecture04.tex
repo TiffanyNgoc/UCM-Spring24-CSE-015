@@ -1,0 +1,112 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{mathabx}
+
+\title{Discrete Math Notes 04}
+\author{Tiffany Pham}
+\date{25 January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Schedule}
+\begin{itemize}
+    \item Overview of LaTeX
+    \item Logic and Proofs
+    \begin{itemize}
+        \item System specifications
+        \begin{itemize}
+            \item Satisfiability, unsatisfiability, validity
+        \end{itemize}
+        \item Puzzles
+        \item Propositional equivalence
+    \end{itemize}
+\end{itemize}
+
+\section{System Specifications}
+Example: Vending Machine
+\hfill \break
+Specifications:
+\begin{itemize}
+    \item You have to put in money in order to get a drink.
+    \item You can get a drink without putting money in.
+\end{itemize}
+Let:
+
+p: put money in
+
+q: get a drink
+
+\hfill \break
+$q \rightarrow p$
+\hfill \break
+$\lnot p\rightarrow q$
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+ p & q & $\lnot p$ & $\lnot p\land q$ & $q\rightarrow p$ \\ 
+ \hline
+ T & T & F & F & T \\ 
+ T & F & F & F & T \\
+ F & T & T & T & F \\
+ F & F & T & F & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+\hfill \break
+A description is \underline{consistent if} the conjunction of propositions is \underline{satisfiable}.
+
+\hfill \break
+A \underline{proposition} is \underline{satisfiable} if there exists an assignment of truth value that makes the proposition (at least one can of truth table must be true.
+
+\hfill \break
+Example: Is $p\lor q$ satisfiable
+
+yes, when $p\equiv T$ and $q\equiv T$
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & $p\lor q$ \\ 
+ \hline
+ T & T & T \\ 
+ T & F & T \\
+ F & T & T \\
+ F & F & F \\
+ \hline
+\end{tabular}
+\end{center}
+
+$\lnot p$  \hspace{5mm}  $p\lor q$ \hspace{5mm} $p\rightarrow q$
+
+\hfill \break
+\underline{$(\lnot p)\land(p\lor q)\land(p\rightarrow q)$} Satisfiable?
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ p & q & $\lnot p$ & $p\lor q$ & $q\rightarrow p$ & $(\lnot p)\land(p \lor q)\land(p\rightarrow q$ \\ 
+ \hline
+ T & T & F & T & T & F \\ 
+ T & F & F & T & F & F \\
+ F & T & T & T & T & T \\
+ F & F & T & F & T & F \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

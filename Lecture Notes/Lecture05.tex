@@ -1,0 +1,247 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Discrete Math Notes Lecture 05}
+\author{Tiffany Pham}
+\date{30 January 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Schedule}
+\begin{itemize}
+    \item System specifications
+    \begin{itemize}
+        \item Satisfiability, unsatisfiability, validity
+    \end{itemize}
+    \item Puzzles
+    \item Propositional equivalence
+    \item Predicates and identifiers
+\end{itemize}
+
+\section{Unsatisfiability}
+\underline{Unsatisfiability}: All rows of the truth table evaluate to false.
+
+\hfill \break
+Example: $p\land \lnot p$ is unsatisfiable
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & $\lnot p$ & $p\land \lnot p$ \\ 
+ \hline
+ T & F & F \\ 
+ F & T & F \\
+ \hline
+\end{tabular}
+\end{center}
+
+\hfill \break
+\underline{Validity}: A proposition is \underline{valid} when it is always true for any assignment of truth values (all rows of true).
+
+\hfill \break
+Examples: $p\lor \lnot p$
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & $\lnot p$ & $p\lor \lnot p$ \\ 
+ \hline
+ T & F & T \\ 
+ F & T & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+\hfill \break
+$p\rightarrow p$
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ p & $\rightarrow p$ \\
+ \hline
+ T & T \\ 
+ F & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Puzzles}
+\textbf{Puzzle 1}: Knights and Knaves puzzles
+\begin{itemize}
+    \item Knights always tell the truth.
+    \item Knaves always lie.
+    \item You can't distinguish by appearance, only by the truth of their statements.
+\end{itemize}
+
+\hfill \break
+We meet two people, A and B. They
+
+A: B is a knight.
+
+B: We are of the opposite kind.
+\hfill \break
+Can you determine their kind?
+
+p: A is a knight \hspace{5mm} $\lnot p$: A is a Knave
+
+q: B is a knight \hspace{5mm} $\lnot q$: B is a Knave
+\hfill \break
+Suppose A is a Knight
+
+p = T \hspace{2.5mm} q = T
+
+$(p\land \lnot q)\lor (\lnot p \land q) \rightarrow$ F
+
+\hfill \break
+If A is a Knave, so whatever they say must be a lie.
+
+p = F
+
+q = F
+
+\hfill \break
+There B is also a Knave.
+\hfill \break
+Not is is oke for B's statement to be false.
+
+\hfill \break
+\textbf{Puzzle 2}: You are presented with three boxes.
+\begin{itemize}
+    \item Only one box has treasure.
+    \item Box 1 inscription: This box is empty.
+    \item Box 2 "\hspace{3mm}": This box is empty.
+    \item Box 3 "\hspace{3mm}": Treasure is in box 2.
+    \item Only one inscription is correct
+\end{itemize}
+Q: Can you determine which box has the treasure?
+\hfill \break
+Let Pi = box i has treasure for i = 1, 2, 3
+\hfill \break
+Since only one box has treasure, we have just three cases 
+
+1: $p_{1}=T_{1}p_{2}=F_{1}p_{3}=F$
+
+2: $p_{1}=F_{1}p_{2}=T_{1}p_{3}=F$
+
+3: $p_{1}=F_{1}p_{2}=F_{1}p_{3}=T$
+\hfill \break
+See if the last statement is correct under each of three cases.
+
+\hfill \break
+$(\lnot p_{1}\land p_{2}\land \lnot p_{2})\lor(p_{1}\land \lnot p_{2}\land \lnot p_{2})\lor(p_{1}\land p_{2}\land p_{2})$
+\begin{center}
+\begin{tabular}{ |c|c|c|c| } 
+ \hline
+ $p_{1}$ & $p_{2}$ & $p_{3}$ & $(\lnot p_{1}\land p_{2}\land \lnot p_{2})\lor(p_{1}\land \lnot p_{2}\land \lnot p_{2})\lor(p_{1}\land p_{2}\land p_{2})$ \\ 
+ \hline
+ T & F & F & T \\ 
+ F & T & F & F \\
+ F & F & T & F \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Compound Propositions}
+Proving that a compound proposition is satisfiable or unsatisfiable can be computationally expensive.
+\hfill \break
+Using truth table (exhaustive test).
+\hfill \break A compound proposition with n variables will have $2^n$ rows in its truth table.
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ p & q & ... \\
+ \hline
+ T & T & . \\ 
+  &  &     \\
+ \hline
+\end{tabular}
+\end{center}
+
+To prove satisfiability $\rightarrow$ only need to find one row that is T.
+
+To prove unsatisfiability, $\rightarrow$ need to check that every row is F.
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ n & \# rows $(2^n)$ \\
+ \hline
+ 2 & 4 \\ 
+ 10 & 1024 \\
+ 25 & $\sim3.3x10^7$ \\
+ 278 & $4.6x10^83$ \\
+ 1000 & more than can be checked by a computer in a trillion year \\
+ \hline
+\end{tabular}
+\end{center}
+
+$\sim3.3x10^7$ = \# seconds in a year $\sim3.3x10^7$
+
+$4.6x10^83$ \# atoms in universe $\sim 10^78 to 10^82$
+
+
+\hfill \break
+\underline{Definition:} A \underline{compound proposition} is an expression made up of propositional variables and logical corrective.
+
+\hfill \break
+\underline{Definition:} If a compound proposition is always true no matter what assignment of truth values we take for its proposition, then it is called a \underline{tautology}.
+
+\hfill \break
+If the compound proposition is always false, then it is called a \underline{contradiction}.
+
+\hfill \break
+A compound proposition that is neither a tautology nor a contradiction is called a \underline{contingency}.
+
+\hfill \break
+\underline{Ex}. $a\lor \lnot a$ is a tautology
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ a & $\lnot a$ & $a\lor \lnot a$ \\ 
+ \hline
+ T & F & T \\ 
+ F & T & T \\
+ \hline
+\end{tabular}
+\end{center}
+\hfill \break
+$a\lor \lnot a$ is a \underline{contradiction}.
+
+\section{Logical Equivalence}
+Definition: Compound propositions p and q called \underline{logically equivalent} if the statement $p\leftrightarrow q$ is a tautology. Logical equivalence is expressed as
+\begin{displaymath}
+    p\equiv q
+\end{displaymath}
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ a & q & $\leftrightarrow q$ \\ 
+ \hline
+ T & T & T \\ 
+ T & F & F \\
+ F & T & F \\
+ F & F & T \\
+ \hline
+\end{tabular}
+\end{center}
+\hfill \break
+Show that $\lnot(p\lor q)\equiv \lnot p\land \lnot q$
+$\rightarrow show \lnot(p\lor q)\leftrightarrow \lnot p\land \lnot q$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c|c| } 
+ \hline
+ p & q & $\lnot p$ & $\lnot q$ & $p\lor q$ & $\lnot(p\lor q)$ & $\lnot p\land \lnot q$ & $\lnot(p\lor q)\leftrightarrow \lnot p\land \lnot q$ \\ 
+ \hline
+ T & T & T & F & T & F & F & T \\ 
+ T & F & F & T & T & F & F & T \\
+ F & T & T & F & T & F & F & T \\
+ F & F & T & T & F & T & T & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+\end{document}

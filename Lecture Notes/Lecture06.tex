@@ -1,0 +1,280 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Discrete Math Notes Lecture 06}
+\author{Tiffany Pham}
+\date{01 February 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Uh}
+$p\rightarrow q\equiv \lnot p\lor q$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c| } 
+ \hline
+ $p$ & $q$ & $\lnot p$ & $p\rightarrow q$ & $\lnot p \lor q$ & $(p\rightarrow q)\leftrightarrow p\lor q$ \\ 
+ \hline
+ T & T & F & T & T & T \\ 
+ T & F & F & F & F & T \\
+ F & T & T & T & T & T \\
+ F & F & T & T & T & T \\
+ \hline
+\end{tabular}
+\end{center}
+
+\section{Summary of Logical Equivalence}
+$\lnot \lnot p\equiv p$ (Double Negation)
+\hfill \break
+$\lnot(p\lor q)\equiv \lnot p\land \lnot q$
+\hfill \break
+$\lnot(p\land q)\equiv \lnot p\lor \lnot q$
+
+\hfill \break
+Identity Laws:
+\hfill \break
+$p\land T\equiv p$
+\hfill \break
+$p\lor F\equiv p$
+
+\hfill \break
+Domination Laws:
+\hfill \break
+$p\lor T\equiv T$
+\hfill \break
+$p\land F \equiv F$
+
+\hfill \break
+Idempotent Laws
+\hfill \break
+$p\lor p\equiv p$
+\hfill \break
+$p\;and p\equiv p$
+
+\hfill \break
+Commutative Laws:
+\hfill \break
+$p\lor q\equiv q\lor p$
+\hfill \break
+$p\land q\equiv q\land p$
+
+\hfill \break
+Associative Laws:
+\hfill \break
+$(p\lor q)\lor r\equiv p\lor(q\lor r)$
+\hfill \break
+$(p\land q)\land r\equiv p\land(q\land r)$
+
+\hfill \break
+Distributive Laws:
+\hfill \break
+$p\lor(q\land r)\equiv(p\lor q)\land(p\lor r)$
+\hfill \break
+$p\land(q\lor r)\equiv(p\land q)\lor(p\land r)$
+
+\hfill \break
+Absorption Laws:
+\hfill \break
+$p\lor(p\land q)\equiv p$
+\hfill \break
+$p\land (p\lor q)\equiv p$
+
+\section{Logical Equivalences Involving Conditional Statements}
+$p\rightarrow q\equiv \lnot p\lor q$ \hspace{2mm} Conditional-Disjunction or Implication Removal
+
+\hfill \break
+$p\rightarrow q\equiv \lnot q\rightarrow \lnot p$ \hspace{2mm} Contra-positive
+
+\hfill \break
+$p\lor q\equiv \lnot p\rightarrow q$
+
+\hfill \break
+$p\land q\equiv \lnot(p\rightarrow \lnot q)$
+
+\hfill \break
+$(p\rightarrow q\land(p\rightarrow r)\equiv(p\rightarrow(q\land r)$
+
+\hfill \break
+$(p\rightarrow r)\land(q\rightarrow r)\equiv(p\lor q)\rightarrow r$
+
+\hfill \break
+$(p\rightarrow q)\lor(p\rightarrow r)\equiv p\rightarrow(q\lor r)$
+
+\hfill \break
+$(p\rightarrow r)\lor(q\rightarrow r)\equiv(p\land q)\rightarrow r$
+
+\section{Logical Equivalences Involving Bi-conditional Statements}
+$p\leftrightarrow q\equiv(p\rightarrow q)\land(q\rightarrow p)$
+
+\hfill \break
+$p\leftrightarrow q\equiv \lnot p\leftrightarrow \lnot q$
+
+\hfill \break
+$p\leftrightarrow q\equiv(p\land q)\lor(\lnot p\land \lnot q)$
+
+\hfill \break
+$\lnot(p\leftrightarrow q)\equiv p\leftrightarrow \lnot q\equiv \lnot p\leftrightarrow q$
+
+\section{Constructing (Proving) New Logical Equivalences}
+Show that $\lnot(p\lor(\lnot p\land q)\equiv \lnot p\land \lnot q$
+
+Start with left and apply known logical equivalence to get right:
+
+\hfill \break
+$\lnot(p\lor(\lnot p\land q))\equiv \lnot p\land \lnot(\lnot p\land q)$ \hspace{5mm} (De Morgans)
+\hfill \break
+$\equiv \lnot p\land(\lnot \lnot p\lor \lnot q)$ \hspace{5mm} ("\hspace{2mm}")
+\hfill \break
+$\equiv \lnot p\land(p\lor \lnot q)$ \hspace{5mm} (Double Negation)
+\hfill \break
+$\equiv(\lnot p\land p)\lor(\lnot p\land \lnot q)$ \hspace{5mm} (Distributive)
+\hfill \break
+$\equiv F \lor(\lnot p\land \lnot q)$ \hspace{5mm} (Contradiction)
+\hfill \break
+$\equiv \lnot p\land \lnot q$ \hspace{5mm} (Identity)
+
+\hfill \break
+Show that $(p\land q)\rightarrow(p\lor q)\equiv T$
+
+\hfill \break
+$(p\land q)\rightarrow(p\lor q)\equiv \lnot(p\land q)\lor (p\lor q)$ (Implication Removal)
+
+\hfill \break
+$\equiv(\lnot p\lor \lnot q)\lor(p\lor q)$ (De Morgan's)
+\hfill \break
+$\equiv \lnot p\lor \lnot q \lor p \lor q$ (Associtative)
+\hfill \break
+$\equiv(\lnot p\lor p)\lor(\lnot q\lor q)$ (Communative \& Associative)
+\hfill \break
+$\equiv T \lor T$
+\hfill \break
+$\equiv T$
+
+\hfill \break
+$\lnot(p\leftrightarrow q)\equiv p\leftrightarrow \lnot q$
+\hfill \break
+$\lnot(p\leftrightarrow q)\equiv \lnot((p\rightarrow q)\land(q\rightarrow p))$
+\hfill \break
+$\equiv \lnot(p\rightarrow q)\lor \lnot(q\rightarrow p)$
+\hfill \break
+$\equiv(p\land \lnot q)\lor(q\land \lnot p)$
+
+\section{Predicates and Quantifiers}
+\underline{Propositional logic} cannot express the meanings of all statements in mathematics and natural language.
+
+\hfill \break
+For example, suppose we know
+
+"All people are mortal"
+
+and
+
+"Socrates is a person"
+
+then can't use propositional logic to conclude
+
+"Socrates is mortal"
+
+\hfill \break
+Need a language that talks about \underline{objects}, their \underline{properties}, and their \underline{relatives}.
+
+\hfill \break
+\underline{Predicate Logic}
+
+\hfill \break
+Predicate Logic uses:
+\begin{enumerate}
+    \item Variables: x, y, z
+    \item Predicates
+    \item Quantifiers "for all," "there exists"
+\end{enumerate}
+
+\hfill \break
+Consider the statement
+
+$"x>3"$
+\hfill \break
+"x is the variable"
+\hfill \break
+"is greater than 3" is the predicate
+
+\hfill \break
+\underline{Propositional Functions}
+\hfill \break
+We can denote the statement "x is greater than 3" by p(x), where x is the variable and "is greater than 3" is the predicate.
+
+\hfill \break
+p here is called a \underline{propositional function}.
+\hfill \break
+Once a value has been assigned to x, the statement p(x) becomes a \underline{proposition} and truth value.
+
+\hfill \break
+\underline{Ex:}
+\hfill \break
+Let p(x) be $"x>3$
+
+p(4) = T
+
+p(3) = F
+\hfill \break
+Statements can have more than one variable
+\hfill \break
+Ex. Let Q(x, y) be the statement $"x=y+3"$
+
+Q(1, 2) = F
+
+Q(3, 0) = T
+
+\hfill \break
+Can combine statements using connectives from propositional logic:
+\hfill \break
+Propositional logic:
+
+\hfill \break
+Ex: Let p(x) denote $"x>0"$
+
+$p(3)\lor p(-1)$ \hspace{5mm} T
+
+$p(3)\land p(-1)$ \hspace{5mm} F
+
+$p(3)\rightarrow p(-1)$ \hspace{5mm} F
+
+$p(-1)\rightarrow p(3)$ \hspace{5mm} T
+
+\hfill \break
+Expressions with variables are not propositions and therefore don't have truth values.
+
+\hfill \break
+Ex:
+\hfill \break
+$p(3)\land p(y)$
+\hfill \break
+$p(x)\rightarrow p(y)$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

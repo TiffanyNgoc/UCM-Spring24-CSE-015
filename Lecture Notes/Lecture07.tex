@@ -1,0 +1,216 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\title{Discrete Math Notes Lecture 07}
+\author{Tiffany Pham}
+\date{06 February 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Logical Equivalence}
+$\lnot(p\leftrightarrow q)\equiv p\leftrightarrow\lnot q$
+
+\hfill \break
+$\lnot(p\leftrightarrow q)\equiv\lnot((p\rightarrow q)\land(q\rightarrow p))$
+\hfill \break
+$\equiv\lnot(p\rightarrow q)\lor\lnot(q\rightarrow p)$
+\hfill \break
+$\equiv(p\land\lnot q)\lor(q\land\lnot p)$
+\hfill \break
+$\equiv(p\land\lnot q)\lor(\lnot p\land q)$
+\hfill \break
+$\equiv p\leftrightarrow\lnot q$
+\hfill \break
+$(\equiv\lnot p\leftrightarrow q)$
+
+\section{Predicate Logic}
+Review
+\begin{itemize}
+    \item Variables: x, y, z
+    \item Predicates: "is greater than 3"
+\end{itemize}
+\underline{P(x)}: "x is greater than 3"
+\hfill \break
+The statement P(x) won't have a value until x is "bound"
+\hfill \break
+Ex: P(4) = T
+
+P(3) = F
+
+\hfill \break
+We need \underline{quantifiers} to \underline{bind} these variables and turn \underline{predicates} into \underline{propositions}.
+
+\hfill \break
+Quantifiers will allow us to express the meaning of the English words "all" or "some".
+\begin{itemize}
+    \item "All men are mortal."
+    \item "Some cats do not have fur."
+    \item "There exists cats that do not have fur."
+\end{itemize}
+The two most important quantifiers are
+\begin{itemize}
+    \item Universal Quantifier: $\forall$ which we read as "for all"
+    \item Existential Quantifier: $\exists$ which we read as "there exists"
+\end{itemize}
+We can now use the quantifiers to \underline{bind} the variables in statements:
+
+$\forall$P(x): is the statement "P(x) is true for \underline{every} x"
+
+$\exists$P(x): is the statement "P(x) is true for \underline{some} x"
+
+\hfill \break
+Note that we also need to specify the \underline{domain} of x: what values x can take.
+
+\hfill \break
+\underline{Universal Quantifier}
+$\forall P(x)$ is read as "For all x, P(x)" or "For every x, P(x)"
+
+\hfill \break
+Examples:
+\begin{enumerate}
+    \item If P(x) denotes $"x>0"$ and the domain the set of integers then
+    \begin{center}
+    $\forall x P(x)$ is \underline{F}
+    \end{center}
+    \item If the domain is now the set of positive integers then
+    \begin{center}
+        $\forall x P(x)$ is \underline{T}
+    \end{center}
+    \item Let P(x) be "x is even" and the domain be the integers then
+    \begin{center}
+        $\forall x P(x)$ is \underline{F}
+    \end{center}
+\end{enumerate}
+
+\hfill \break
+\underline{Existential Quantifier}
+\hfill \break
+$\exists x P(x)$ is read as "For some x, P(x)" or "There is an x such that P(x)" or "For at least one x, P(x)"
+\begin{enumerate}
+    \item If P(x) denotes $"x>0"$ and U is the integers then
+    \begin{center}
+        $\exists xP(x)$ is \underline{T}
+    \end{center}
+    \item If P(x) denotes $"x<0"$ and U is the positive integers then
+    \begin{center}
+        $\exists xP(x)$ is \underline{F}
+    \end{center}
+    \item If P(x) is "x is even" and U is the integers then
+    \begin{center}
+        $\exists xP(x)$ is \underline{T}
+    \end{center}
+\end{enumerate}
+\hfill \break
+It can help to think about \underline{quantification} as "looping" through the elements of the domain.
+\hfill \break
+To evaluate $\forall xP(x)$ loop through all x in domain:
+\begin{itemize}
+    \item If at every step, P(x) is true then $\forall xP(x)$ is true
+    \item If at a step P(x) is false then $\forall xP(x)$ is false (and the loop terminates).
+\end{itemize}
+
+\hfill \break
+To evaluate $\forall xP(x)$ loop through all x in domain:
+\begin{enumerate}
+    \item If at some step P(x) is true then $\exists xP(x)$ is true (and loop terminates).
+    \item If the loop ends without finding an x for which P(x) is true then $\exists xP(x)$ is false.
+\end{enumerate}
+\hfill \break
+The truth value of $\exists xP(x)$ and $\forall xP(x)$ depend on both P(x) \underline{and} the domain U.
+
+\hfill \break
+\underline{Ex.}
+\begin{enumerate}
+    \item If U is the positive integers and P(x) is $"x<2"$ then
+    \begin{itemize}
+        \item $\exists xP(x)$ is \underline{T}
+        \item $\forall xP(x)$ is \underline{F}
+    \end{itemize}
+    \item If U is now the negative integers
+    \begin{itemize}
+        \item $\exists xP(x)$ is \underline{T}
+        \item $\forall xP(x)$ is \underline{T}
+    \end{itemize}
+    \item If U consists of \{3, 4, 5\} and P(x) is $"x>2"$
+    \begin{itemize}
+        \item $\exists xP(x)=T$
+        \item $\forall xP(x)=T$
+    \end{itemize}
+    If P(x) is $"x<2"$
+    \begin{itemize}
+        \item $\exists P(x)$
+        \item $\forall P(x)$
+    \end{itemize}
+\end{enumerate}
+
+\section{Translating from English to predicate logic}
+Often multiple ways depending on choice of domain
+
+\hfill \break
+\underline{Ex 1}: Translate to predicate logic
+
+"Every student in this class has taken a course in Java."
+\hfill \break
+\underline{Solution 1:} First decide on domain U.
+
+If U is restricted to all students in this class, define J(x) as "x has taken a course in Java."
+\hfill \break
+Can translate as: $\forall xJ(x)$
+\hfill \break
+\underline{Solution 2:} If U is all people then also define S(x) as "x is a student in this class."
+\hfill \break
+Can translate as $\forall x(S(x)\rightarrow J(x))$
+\hfill \break
+Why is the following \underline{not correct}.
+\begin{center}
+    $\forall x(S(x)\land J(x))$
+\end{center}
+\hfill \break
+\underline{Ex 2} Translate to predicate logic:
+
+"Some student in this class has taken a course in Java."
+
+Solution 1: If U is (all) students in this class translate as
+\begin{center}
+    $\exists xP(x)$
+\end{center}
+
+Solution 2: If U is all people translate as
+\begin{center}
+    $\exists x(S(x)\land J(x))$
+\end{center}
+
+\underline{$\exists x(S(x)\rightarrow J(x))$} is \underline{not correct}.
+
+\section{Thinking about Quantifiers as Conjunctions and Disjunctions}
+If the domain is finite
+\begin{itemize}
+    \item Universal quantification is equivalent to conjunction of propositions.
+    \item Existential quantification is equivalent to a disjunction of propositions.
+\end{itemize}
+\underline{Ex} If U consists of integers 1, 2, 3:
+
+$\forall xP(x)\equiv P(1)\land P(2)\land P(3)$
+
+$\exists xP(x)\equiv P(1)\lor P(2)\lor P(3)$
+
+\hfill \break
+\underline{Negating Quantified Expressions}
+\begin{center}
+    $\forall xJ(x)$
+\end{center}
+\hfill \break
+\underline{Ex} Let J(x) be "x has taken a course in Java" and U be students in this class
+\hfill \break
+$\forall xJ(x)$ is "Every student in this class has taken a course in Java."
+\hfill \break
+Negate the statement: "It is not the case that every student in this class has taken a course in Java. Or, "There is a student in this class who has not taken Java". $\exists x\lnot J(x)$
+
+\hfill \break
+Also have
+\hfill \break
+$\lnot\exists xJ(x)\equiv\forall x\lnot J(x)$
+
+\end{document}

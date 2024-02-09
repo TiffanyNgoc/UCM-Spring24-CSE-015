@@ -11,7 +11,7 @@
 \begin{document}
 % Edit the following putting your first and last names and your lab section.
 \author{Tiffany Pham\\
-Lab CSE-015-03L W 10:30-1:20pm}
+Lab CSE-015-08L F 8:30-10:20pm}
 % Edit the following replacing X with the HW number.
 \title{CSE 015: Discrete Mathematics\\
 Spring 2024\\
@@ -25,18 +25,162 @@ Solution}
 \item
 \textbf{Question 1:}
 \begin{enumerate}[label=(\alph*)]
-\item
-You provide the solution to question 1(a) here.
-\item
-You provide the solution to question 1(b) here.
+\item I didn't buy a lottery ticket this week.
+\item If I bought a lottery ticket this week, then I will win the million dollar jackpot on Friday.
+\item I bought a lottery ticket this week and I won the million dollar jackpot on Friday.
+\item I won the million dollar jackpot on Friday if and only if I bought a lottery ticket this week.
+\item If I didn't bought a lottery ticket this week then i would not win the million dollar jackpot on Friday.
 \end{enumerate}
 \item
 \textbf{Question 2:}
 \begin{enumerate}[label=(\alph*)]
-\item
-You provide the solution to question 2(a) here.
-\item
-You provide the solution to question 2(b) here.
+\item $r\land\lnot q$
+\item $p\land q\land r$
+\item $r\rightarrow p$
+\item $p\land\lnot q\land r$
+\item $(p\land q)\rightarrow r$
+\item $r\leftrightarrow(q\land p)$
+\end{enumerate}
+\item \textbf{Question 3:}
+\begin{enumerate}[label=(\alph*)]
+    \item $p\rightarrow\lnot p$
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        p & $\lnot p$ & $p\rightarrow\lnot p$ \\
+        \hline
+        T & F & F \\ 
+        F & T & T \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \item $p\leftrightarrow\lnot p$
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+        \hline
+        p & $\lnot p$ & $p\leftrightarrow\lnot p$ \\
+        \hline
+        T & F & T \\ 
+        F & F & F \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \item $(p\land q)\rightarrow(p\lor q)$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        p & q & $p\land q$ & $p\lor q$ & $(p\land q)\rightarrow(p\lor q)$ \\
+        \hline
+        T & T & T & T & T \\ 
+        T & F & F & T & T \\
+        F & T & F & T & T \\
+        F & F & F & F & T \\
+        \hline
+        \end{tabular}
+    \end{center}
+    \item $(q\rightarrow\lnot p)\leftrightarrow(p\leftrightarrow q)$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        p & q & $\lnot q$ & $q\rightarrow\lnot p$ & $p\leftrightarrow q$ & $(q\rightarrow\lnot p)\leftrightarrow(p\leftrightarrow q)$ \\
+        \hline
+        T & T & F & F & T & F \\ 
+        T & F & F & T & F & F \\
+        F & T & T & F & F & F \\
+        F & F & T & T & T & F \\
+        \hline
+        \end{tabular}
+    \end{center}
+\end{enumerate}
+\item \textbf{Question 4:}
+\begin{enumerate}[label=(\alph*)]
+    \item $r\land\lnot p$
+    \item $(r\land p)\rightarrow q$
+    \item $\lnot q\rightarrow\lnot r$
+    \item $\lnot p\land r\land q$
+\end{enumerate}
+\item \textbf{Question 5:}
+\begin{enumerate}[label=(\alph*)]
+    \item $(p \lor q) \lor r \equiv p \lor (q \lor r)$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            $p$ & $q$ & $r$ & $p \lor q$ & $(p \lor q) \lor r$ & $q \lor r$ & $p \lor (q \lor r)$ \\
+            \hline
+            T & T & T & T & T & T & T \\
+            T & T & F & T & T & T & T \\
+            T & F & T & T & T & T & T \\
+            T & F & F & T & T & F & T \\
+            F & T & T & T & T & T & T \\
+            F & T & F & T & T & T & T \\
+            F & F & T & F & T & T & T \\
+            F & F & F & F & F & F & F \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \item $(p \land q) \land r \equiv p \land (q \land r)$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            p & q & r & $p\land q$ & $(p\land q)\land r$ & $q\land r$ & $p\land(q\land r)$\\
+            \hline
+            T & T & T & T & T & T & T \\
+            T & T & F & T & F & F & F \\
+            T & F & T & F & F & F & F \\
+            T & F & F & F & F & F & F \\
+            F & T & T & F & F & T & F \\
+            F & T & F & F & F & F & F \\
+            F & F & T & F & F & F & F \\
+            F & F & F & F & F & F & F \\
+            \hline
+        \end{tabular}
+    \end{center}
+\end{enumerate}
+\item \textbf{Question 6:}
+\begin{enumerate}[label=(\alph*)]
+    \item $[\lnot p \land (p \lor q)] \rightarrow q$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+             p & q & $\lnot p$ & $p\lor q$ & $(\lnot p\land(p\lor q))$ & $(\lnot p\land(p\lor q))\rightarrow q$ \\
+            \hline
+             T & T & F & T & F & T \\
+             T & F & F & T & F & T \\
+             F & T & T & T & T & T \\
+             F & F & T & F & F & T \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \item $[(p \rightarrow q) \land (q \rightarrow r)] \rightarrow (p \rightarrow r)$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+             p & q & r & $p\rightarrow q$ & $q\rightarrow r$ & $(p\rightarrow q)\land(q\rightarrow r)$ & $((p\rightarrow q)\land(q\rightarrow r))\land(p\rightarrow r)$ \\
+            \hline
+             T & T & T & T & T & T & T \\
+             T & T & F & T & F & F & T \\
+             T & F & T & F & F & F & T \\
+             T & F & F & F & F & F & T \\
+             F & T & T & T & T & T & T \\
+             F & T & F & T & F & F & T \\
+             F & F & T & T & T & T & T \\
+             F & F & F & T & T & T & T \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \item $[p \land (p \rightarrow q)] \rightarrow q$
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+            \hline
+            p & q & $p\rightarrow q$ & $p\land(p\rightarrow q)$ & $(p\land(p\rightarrow q))\rightarrow q$  \\
+            \hline
+            T & T & T & T & T \\
+            T & F & F & F & T \\
+            F & T & T & F & T \\
+            F & F & T & F & T \\
+            \hline
+        \end{tabular}
+    \end{center}
 \end{enumerate}
 \end{enumerate}
 \end{document}

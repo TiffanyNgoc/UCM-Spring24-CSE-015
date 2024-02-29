@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+% To produce a letter size output. Otherwise will be A4 size.
+\usepackage[letterpaper]{geometry}
+% For enumerated lists using letters: a. b. etc.
+\usepackage{enumitem}
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+\begin{document}
+% Edit the following putting your first and last names and your lab section.
+\author{Tiffany Pham\\
+Lab CSE-015-08L F 8:30-10:20pm}
+% Edit the following replacing X with the HW number.
+\title{CSE 015: Discrete Mathematics\\
+Spring 2024\\
+Homework \#02\\
+Solution}
+% Put today's date in the following.
+\date{February 22, 2024}
+\maketitle
+% ========== Begin questions here
+\begin{enumerate}
+    \item \textbf{Question 1:}
+    \begin{enumerate}[label=(\alph*)]
+        \item If an animal is a rabbit, then every rabbit hops.
+        \item Every animal is a rabbit and hops.
+        \item There exists an animal such that if it is a rabbit, then it hops.
+        \item There exists an animal that is a rabbit and hops.
+    \end{enumerate}
+    \item \textbf{Question 2:}
+    \begin{enumerate}[label=(\alph*)]
+        \item True (let $x=\sqrt{2}$)
+        \item False ($\sqrt{-1}$ is not a real number)
+        \item True (the left hand side is always at least 2)
+        \item False (not true for $x=1$ or $x=0$)
+    \end{enumerate}
+    \item \textbf{Question 3:}
+    \begin{enumerate}[label=(\alph*)]
+        \item Let $P(x)$ be "$x$ has a cell phone." Then we have $\forall P(x)$ the first way, or $\forall x(C(x)\rightarrow P(x))$ the second way.
+        \item Let $F(x)$ be "$x$ has seen a foreign movie." Then we have $\exists xF(x)$ the first way, or $\exists(C(x)\land F(x))$ the second way.
+        \item Let $S(x)$ be "$x$ can swim." Then we have $\exists x\lnot S(x)$ the first way, or $\exists x(C(x)\land\lnot S(x))$ the second way.
+        \item Let $Q(x)$ be "$x$ can solve quadratic equations." Then we have $\forall xQ(X)$ the first way, or $\forall x(C(x)\rightarrow Q(x))$ the second way.
+    \end{enumerate}
+    \item \textbf{Question 4:}
+    \begin{enumerate}[label=(\alph*)]
+        \item Some student in your class has taken some computer science course.
+        \item Every student in your class has taken at least one computer science course.
+        \item Every computer science course has been taken by at least one student in your class.
+    \end{enumerate}
+    \item \textbf{Question 5:}
+    \begin{enumerate}[label=(\alph*)]
+        \item $\exists x\exists yQ(x,y)$
+        \item $\lnot\exists x\exists yQ(x,y)$ or $\forall x\forall y\lnot Q(x,y)$.
+    \end{enumerate}
+    \item \textbf{Question 6:}
+    \begin{enumerate}[label=(\alph*)]
+        \item $\forall x\exists yF(x,y)$
+        \item $\lnot\exists x\forall yF(x,y)$
+        \item $\forall y\exists xF(x,y)$
+    \end{enumerate}
+    \item \textbf{Question 7:}
+    \begin{enumerate}[label=(\alph*)]
+        \item $\forall x\forall y(((x<0)\land(y<0))\rightarrow(xy>0))$
+        \item $\forall x\forall y(((x>0)\land(y>0))\rightarrow(((x+y)/2>0))$
+        \item $\forall x\forall y(|x+y|\leq|x|+|y|)$
+    \end{enumerate}
+    \item \textbf{Question 8:}
+    \begin{enumerate}[label=(\alph*)]
+        \item False
+        \item True
+        \item False
+    \end{enumerate}
+\end{enumerate}
+\end{document}

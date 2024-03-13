@@ -1,0 +1,125 @@
+
+Page
+3
+of 3
+\documentclass[11pt]{article}
+% To produce a letter size output. Otherwise will be A4 size.
+\usepackage[letterpaper]{geometry}
+% For enumerated lists using letters: a. b. etc.
+\usepackage{enumitem}
+\topmargin -.5in
+\textheight 9in
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\textwidth 7in
+\begin{document}
+\title{\vspace{-1.5cm}CSE 015: Discrete Mathematics\\
+Spring 2024\\
+Homework \#3\\
+Due 5:00 pm Friday, March 15 via CatCourses}
+\date{}
+\maketitle
+\vspace{-1.5cm}
+\noindent Use LaTeX to prepare your solution as a PDF. Upload \emph{both} your PDF
+and your LaTeX file (hw3.pdf and hw3.tex, for example) to CatCourses. A number of
+students have had trouble at the last moment figuring out how to download the .pdf
+and .tex files from Overleaf for the homeworks. Make sure you know how to do this
+well ahead of the homework deadline. After you upload your files to CatCourses,
+make sure to download them to check that you have uploaded the correct versions.
+% ========== Begin questions here
+\begin{enumerate}
+\item
+\textbf{Question 1:}
+Are these pairs of sets equal or not (you just have to answer Yes or No).
+\begin{enumerate}[label=(\alph*)]
+\item $\{1,3,3,3,5,5,5,5,5\}$, $\{1,3,5\}$
+\item $\{5,1,3\}$, $\{1,3,5\}$
+\item $\{\{1\}\}$, $\{1,\{1\}\}$
+\item $\emptyset$, $\{\emptyset\}$
+\end{enumerate}
+\item
+\textbf{Question 2:}
+What is the cardinality of (the number of elements in) each of these sets?
+\begin{enumerate}[label=(\alph*)]
+\item $\{a\}$
+\item $\{\{a\}\}$
+\item $\{a,\{a\}\}$
+\item $\{a,\{a\},\{a,\{a\}\}\}$
+\end{enumerate}
+For example, the cardinality of the set in part (c) is 2 because this set contains
+two elements: $a$ and $\{a\}$.
+\item
+\textbf{Question 3:}
+Find the power set of each of these sets, where $a$ and $b$ are distinct elements.
+\begin{enumerate}[label=(\alph*)]
+\item $\{a\}$
+\item $\{a,b\}$
+\item $\{a,\{a,b\}\}$
+\end{enumerate}
+For example, the power set of the set in part (b) is: $\{\emptyset, \{a\}, \{b\}, \
+{a,b\}\}$
+Note that your answers must be sets. That is, they should start with $\{$ and end
+with $\}$.
+\item
+\textbf{Question 4:}
+Let $A=\{a,b,c\}$ and $B=\{y,z\}$. Determine the following sets
+\begin{enumerate}[label=(\alph*)]
+\item $A \times B$
+\item $B \times A$
+\item $B \times B$
+\end{enumerate}
+Note that your answers must be sets. That is, they should start with $\{$ and end
+with $\}$.
+\item
+\textbf{Question 5:}
+How many different elements does $A \times B \times C$ have if $A$ has $m$
+elements, $B$ has $n$ elements, and $C$ has $p$ elements?
+\item
+\textbf{Question 6:}
+Let $A=\{1,2,3,4,5\}$ and $B=\{0,3,6\}$. Determine the following sets
+\begin{enumerate}[label=(\alph*)]
+\item $A \cup B$
+\item $A \cap B$
+\item $A - B$
+\item $B - A$
+\end{enumerate}
+Note that your answers must be sets. That is, they should start with $\{$ and end
+with $\}$.
+\item
+\textbf{Question 7:}
+Determine the sets $A$ and $B$ if $A - B = \{1,5,7,8\}$, $B - A = \{2,10\}$, and $A
+\cap B = \{3,6,9\}$
+Note that your answers must be sets. That is, they should start with $\{$ and end
+with $\}$.
+\item
+\textbf{Question 8:}
+Let $A=\{0,2,4,6,8,10\}$, $B=\{0,1,2,3,4,5,6\}$, and $C=\{4,5,6,7,8,9,10\}$.
+Determine the following sets
+\begin{enumerate}[label=(\alph*)]
+\item $A \cap B \cap C$
+\item $(A \cup B) \cap C$
+\end{enumerate}
+Note that your answers must be sets. That is, they should start with $\{$ and end
+with $\}$.
+\item
+\textbf{Question 9:}
+Determine the set $\bigcup\limits_{i=1}^{\infty} A_{i}$ if, for every positive
+integer $i$,
+\begin{enumerate}[label=(\alph*)]
+\item $A_i = \{-i, -i+1, \ldots, -1, 0, 1, \ldots, i-1, i \}$
+\item $A_i = \{-i, i \}$
+\end{enumerate}
+Note that here you don't necessary need to provide the answer as an explicit set of
+elements. You can also describe the set if that seems simpler.
+\item
+\textbf{Question 10:}
+Determine the set $\bigcap\limits_{i=1}^{\infty} A_{i}$ if, for every positive
+integer $i$,
+\begin{enumerate}[label=(\alph*)]
+\item $A_i = \{-i, -i+1, \ldots, -1, 0, 1, \ldots, i-1, i \}$
+\item $A_i = \{-i, i \}$
+\end{enumerate}
+Note that here you don't necessary need to provide the answer as an explicit set of
+elements. You can also describe the set if that seems simpler.
+\end{enumerate}
+\end{document}
